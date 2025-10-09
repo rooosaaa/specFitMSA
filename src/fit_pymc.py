@@ -3,7 +3,7 @@ Script for fitting spectral lines in astronomical data using PyMC. This script p
 
 Usage:
 Run the script as:
-    python py_line_pymc.py <obj_id_user> <n_iter> <nsteps> <ntune> <ncores>
+    python fit_pymc.py <obj_id_user> <n_iter> <nsteps> <ntune> <ncores>
 Inputs:
     - obj_id_user: Object ID to fit (or 'all' to fit all objects in the table).
     - nsteps: MCMC steps per walker.
@@ -341,7 +341,7 @@ if __name__ == "__main__":
             for idx_row, row in group_obj.iterrows():
                 
                 i += 1
-                
+
                 # fit either all, or a specific spectrum
                 if obj_id_user == 'all':
                     pass
@@ -383,6 +383,7 @@ if __name__ == "__main__":
                     except:
                         skipped_file['nospec'].append(fname_spec)
                         print("  - Skipping... No spec could be loaded.")
+
                         continue
                 
                 valid = sampleFit.valid[0]

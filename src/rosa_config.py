@@ -5,8 +5,8 @@ import numpy as np
 BAD_VALUE = -999.0
 
 # paths to spectra
-BASE_URL = 'https://s3.amazonaws.com/msaexp-nirspec/extractions/' # DJA AWS
-PATH_AWS = BASE_URL + '{root}/{file}'
+# BASE_URL = 'https://s3.amazonaws.com/msaexp-nirspec/extractions/' # DJA AWS
+# PATH_AWS = BASE_URL + '{root}/{file}'
 PATH_LOCAL = '/raid/scratch/work/Griley/GALFIND_WORK/Spectra/2D/{root}/{file}'
 
 #=== User inputs ==========================================================
@@ -40,7 +40,7 @@ save_trace = True # save PyMC posterior trace or not
 
 
 #=== paths to be used by the code ========================================
-fpath_project = f'../data/project_{label_project}' # sample directory
+fpath_project = f'/nvme/scratch/work/rroberts/mphys_pop_III/ultrablue-galaxies-mphys/specFitMSA/src' # sample directory
 fpath_outputs = os.path.join(fpath_project, f"pymc_outputs")
 fdirs = [fpath_project, fpath_outputs]
 for fdir in fdirs:

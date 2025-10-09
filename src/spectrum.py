@@ -80,8 +80,8 @@ class SpectrumSample(object):
             self.urls = [cfg.PATH_AWS.format(root=root, file=fname) \
                          for root, fname in zip(roots, fnames)]
         else:
-            self.urls = [cfg.PATH_LOCAL.format(file=fname) \
-                         for fname in fnames]
+            self.urls = [cfg.PATH_LOCAL.format(root=root, file=fname) \
+                         for root, fname in zip(roots, fnames)]
         
         # load all spectra with msaexp
         samp = []
