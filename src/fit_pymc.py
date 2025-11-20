@@ -3,7 +3,7 @@ Script for fitting spectral lines in astronomical data using PyMC. This script p
 
 Usage:
 Run the script as:
-    python fit_pymc.py <obj_id_user> <n_iter> <nsteps> <ntune> <ncores>
+    python fit_pymc.py <obj_id_user><nsteps> <ntune> <ncores>
 Inputs:
     - obj_id_user: Object ID to fit (or 'all' to fit all objects in the table).
     - nsteps: MCMC steps per walker.
@@ -35,7 +35,7 @@ import arviz as az
 import corner
 import matplotlib.pyplot as plt
 import multiprocessing as mp
-mp_start_method = 'fork'
+mp_start_method = 'spawn'
 import numpy as np
 import pandas as pd
 import pymc as pm

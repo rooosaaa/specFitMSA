@@ -13,8 +13,8 @@ PATH_LOCAL = '/raid/scratch/work/Griley/GALFIND_WORK/Spectra/2D/{root}/{file}'
 label_project = 'mphys_ultrablue'
 
 #=== filenames
-fname_spec = 'matched_exposures_with_snr.csv' # .csv file with a 'file' column
-fname_catalog_flux = 'catalog-flux.csv' # flux catalog with fitted lines
+fname_spec = 'matched_exposures_prism.csv' # .csv file with a 'file' column
+fname_catalog_flux = 'catalog-flux_prism.csv' # flux catalog with fitted lines
 step_method = 'NUTS' # PyMC sampling method
 
 # medium/high-res spec setup
@@ -30,7 +30,8 @@ line_fwhm_kms = 2e3 # line velocity FWHM [km/s]
 #line_keys = cl.cols_high_ion
 #line_keys = cl.lines_MgS + cl.lines_Ar + cl.lines_Ne +\
 #            cl.lines_cnohe + cl.cols_tem_diag + cl.cols_den_diag + cl.cols_hydrogen
-line_keys = ['HeII_1640']
+line_keys = ['Ha_6565']
+# line_keys = ['HeII_1640', 'Ha_6565', 'Hb_4861', 'OIII_4959', 'OIII_5007']
 line_keys = np.unique(line_keys)
 
 #broad_lines = ['Ha_6565'] # not implemented yet
@@ -40,8 +41,8 @@ save_trace = True # save PyMC posterior trace or not
 
 
 #=== paths to be used by the code ========================================
-fpath_project = f'../data/project_{label_project}' # sample directory
-fpath_outputs = os.path.join(fpath_project, f"pymc_outputs")
+fpath_project = f'/raid/scratch/work/rroberts/mphys_pop_III/ultrablue-galaxies-mphys/specFitMSA/data/project_{label_project}' # sample directory
+fpath_outputs = os.path.join(fpath_project, f"pymc_outputs_prism")
 fdirs = [fpath_project, fpath_outputs]
 for fdir in fdirs:
     if not os.path.exists(fdir):

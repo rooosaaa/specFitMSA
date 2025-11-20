@@ -141,7 +141,15 @@ for cols_orig, line_str_orig in zip(cols_sets_unresolved, lines_unresolved):
     # add columns for the remaining originally combined lines and fill with NaNs
     cols_other_new = [[c.replace(line_str_orig, line) for c in cols_orig] \
                       for line in lines[1:]]
-    col_index = df_allspec.columns.get_loc(cols_new[-1])
+    try:
+        col_index = df_allspec.columns.get_loc(cols_new[-1])
+    except Exception as e:
+        print("Error in file:", fpath)   # or print(fname) for just the file name
+        print("Original line string:", line_str_orig)
+        print("Split lines:", lines)
+        print("New columns:", cols_new)
+        print("Exception:", e)
+        # exit()   # optional: comment out if you just want to log and continue
     
     for cols_line in cols_other_new:
         # Insert the new columns into df_allspec at the specified column index

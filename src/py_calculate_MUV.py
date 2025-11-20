@@ -17,7 +17,7 @@ download_data = True # get DJA spectra from cfg.PATH_AWS or cfg.PATH_LOCAL?
 verbose_download = False
 
 # load prism catalog
-fpath = os.path.join(cfg.fpath_project, 'sample_spec_prism.csv')
+fpath = os.path.join(cfg.fpath_project, 'matched_exposures_with_snr.csv')
 df_prism = pd.read_csv(fpath)
 
 # load all DJA spectra in memory
